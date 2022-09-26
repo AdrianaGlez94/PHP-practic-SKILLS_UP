@@ -11,156 +11,95 @@
         <title>Index.html</title>
     </head>
     <body>
-        <main>
+    <main>
+    <legend>Contact Information</legend>
 
-
-            <legend>Contact Information</legend>
-
-        <form action="Servidor.html" method="get">
-
-    <section>
-
-    
-        <label for="id_name">Full name
-
-        <input type="text" name="name" id="id_name" placeholder="required"></label>
-
-<br>
+    <form action="Servidor.html" method="get">
+        <h1>PHP Form Validation Example</h1>
+        <div>
         
-
-        <label for="id_email">Email Address
-        <input type="text" name="email" id="id_email" required></label>
-
+        <label for="id_name">Name:
+        <input type="text" name="name" id="id_name"></label>
         <br>
-
-
-
-<label for="id_number">Phone number
-<input type="text" name="number" id="id_number"></label>
-
-
-<br>
-    
-    
-    <label for="id_address">Street Address
-    <input type="text" name="address" id="id_address"></label>
-
-
-<br>
-
-    
-
-        <label for="city">City</label>
-        <input type="text" id="city" name="city"><br>
-
-
-
-
-        <label for="communities">Autonomous communities</label>
-        <select name="communities" id="communities">
-            <option value="0" selected disabled hidden>Choose your option</option>
-            <option value="Andalucí­a">Andalucí­a</option>
-            <option value="Aragón">Aragón</option>
-            <option value="Principado de Asturias">Principado de Asturias</option>
-            <option value="Islas Baleares">Islas Baleares</option>
-            <option value="País Vasco">Paí­s Vasco</option>
-            <option value="Islas Canarias">Islas Canarias</option>
-            <option value="Cantabria">Cantabria</option>
-            <option value="Castilla-La Mancha">Castilla-La Mancha</option>
-            <option value="Castilla y León">Castilla y León</option>
-            <option value="Cataluña">Cataluña</option>
-            <option value="Extremadura">Extremadura</option>
-            <option value="Galicia">Galicia</option>
-            <option value="Comunidad de Madrid">Comunidad de Madrid</option>
-            <option value="Región de Murcia">Región de Murcia</option>
-            <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
-            <option value="La Rioja">La Rioja</option>
-            <option value="Comunidad Valenciana">Comunidad Valenciana</option>
-            <option value="Ceuta">Ceuta</option>
-            <option value="Melilla">Melilla</option>
-
-    </select>
-
-
-    <br>
-    
-    <label for="id_state">State
-    <input type="text" name="state" id="id_state" placeholder="Choose State"></label>
-    
-
-    <br>
-    
-    <label>Zip Code
-    <input type="text" name="zip" id="id_zip" size="3"></label>
-    
-
-    <br>
-    
-    </section>
-<hr>
-    
-    <section>
-
-    <h1>Newsletter</h1>
-    
-    <fieldset class="news radio checkbox">
-
-        <h4>Select the newsletter you would like to recieve</h4>
-
-        <label for="id_html"> 
-        <input type="checkbox" name="html" id="id_html">HTML News</label>
-
+        <label for="id_email"> E-mail: 
+        <input type="text" name="email" id="id_email"></label>
         <br>
-
-        <label for="id_css">
-
-        <input type="checkbox" name="css" id="id_css">CSS News</label>
-
-        <br>
-
-        <label for="id_js"> 
-        <input type="checkbox" name="javascript" id="id_js">Javascript News</label>
-
-
-        </label>
-
-        </section>
-
-<hr>
-
-<section>
-
-        <h4>Newsletter format</h4>
-
-        <label for="id_html"> 
-        <input type="radio" name="html" id="id_html">HTML</label>
-
-        <br>
-
-        <label for="id_plain"> 
-        <input type="radio" name="plain" id="id_plain">Plain text</label>
-    
-    
-</section>
-
-
-<h4>Other topics you'd like to hear about</h4>
-
-<textarea name="othert" id="id_othert" cols="40" rows="20" placeholder=""Write the topics you would like to read...""></textarea>
-    
-
-
-<br>
-    
-    </fieldset>
-
-    <button type="submit">Sign Up</button>
-    <button type="reset">Reset</button>
-
-
-    </form>
+        <label for="id_website">Website: 
+        <input type="text" name="website" id="id_website"></label>
+        <hr>
+        
+        <textarea name="comment" rows="5" cols="40">Comment:</textarea>
+        
+        <hr>
+        
+        <div class="contact_input">
+            <label for="communities">Autonomous communities</label>
+            <select name="communities" id="communities">
+                <option value="0" selected disabled hidden>Choose your option</option>
+                <option value="Andalucí­a">Andalucí­a</option>
+                <option value="Aragón">Aragón</option>
+                <option value="Principado de Asturias">Principado de Asturias</option>
+                <option value="Islas Baleares">Islas Baleares</option>
+                <option value="País Vasco">Paí­s Vasco</option>
+                <option value="Islas Canarias">Islas Canarias</option>
+                <option value="Cantabria">Cantabria</option>
+                <option value="Castilla-La Mancha">Castilla-La Mancha</option>
+                <option value="Castilla y León">Castilla y León</option>
+                <option value="Cataluña">Cataluña</option>
+                <option value="Extremadura">Extremadura</option>
+                <option value="Galicia">Galicia</option>
+                <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                <option value="Región de Murcia">Región de Murcia</option>
+                <option value="Comunidad Foral de Navarra">Comunidad Foral de Navarra</option>
+                <option value="La Rioja">La Rioja</option>
+                <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                <option value="Ceuta">Ceuta</option>
+                <option value="Melilla">Melilla</option>
+            </select><br>
+        </div>
+        
+        <div class="contact_input">
+                <label id="label_Zcode" for="Zcode">Zip Code</label><br>
+                <input type="text" id="Zcode" name="Zcode"><br>
+        </div>
+        
+        <hr>
+        
+        <fieldset class="news radio checkbox">
+            <legend>Newsletter</legend>
+            <label>Select the newsletters you would like to recive</label><br>
+            <br>
+            <input id="newshtml" type="checkbox" value="HTML">
+            <label for="newshtml">HTML News</label><br>
+            <br>
+            <input id="newscss" type="checkbox" value="CSS">
+            <label for="newscss">CSS News</label><br>
+            <br>
+            <input id="newsjs" type="checkbox" value="JS">
+            <label for="newsjs">Javascript News</label><br>
+            <br>
+            <label>Newsletter format</label><br>
+            <br>
+            <input id="fhtml" type="radio" name="format" value="fhtml">
+            <label for="fhtml">HTML</label><br>
+            <br>                
+            <input id="fplaintxt" type="radio" name="format" value="fplaintxt">
+            <label for="fplaintxt">Plain text</label><br>
+            <br>
+            <label for="othert">Other topics you'd like to hear about</label><br>
+            <br>
+            <textarea id="othert" name="othert" placeholder="Write the topics you would like to read..."></textarea>
+        </fieldset>
+        
+        <hr>
+        
+        <br> 
+        <button type="submit">Sign Up</button>
+        <button type="reset">Reset</button>
+        </form>    
 
 </main>
+
 <footer>
         <p>Copyright The Code Review</p>
 </footer>
