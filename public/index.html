@@ -24,8 +24,8 @@
         <label for="id_email"> E-mail: 
         <input type="text" name="email" id="id_email"></label>
         <br>
-        <label for="id_website">Website: 
-        <input type="text" name="website" id="id_website"></label>
+        <label for="id_number">Phone number: 
+        <input type="text" name="phone" id="id_number"></label>
         <hr>
         
         <textarea name="comment" rows="5" cols="40">Comment:</textarea>
@@ -69,13 +69,13 @@
             <legend>Newsletter</legend>
             <label>Select the newsletters you would like to recive</label><br>
             <br>
-            <input id="newshtml" type="checkbox" value="HTML">
-            <label for="newshtml">HTML News</label><br>
+            <input id="newsletters[]" id="newshtml"  type="checkbox" value="HTML">
+            <label for="newsletters[]">HTML News</label><br>
             <br>
-            <input id="newscss" type="checkbox" value="CSS">
+            <input id="newscss" type="checkbox"  id="newscss"value="CSS">
             <label for="newscss">CSS News</label><br>
             <br>
-            <input id="newsjs" type="checkbox" value="JS">
+            <input id="newsjs" type="checkbox" id="newsjs" value="JS">
             <label for="newsjs">Javascript News</label><br>
             <br>
             <label>Newsletter format</label><br>
