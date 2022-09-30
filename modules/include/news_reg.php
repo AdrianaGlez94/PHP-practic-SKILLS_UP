@@ -22,6 +22,14 @@
         $name= limpiar_dato( $_POST["name"]);
         $email=limpiar_dato($_POST["email"]);
         $phone=limpiar_dato($_POST["phone"]);
+        
+       // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
+        if (isset($_POST["address"])){ 
+            $address= limpiar_dato($_POST["address"]);
+        } else{
+            $address=NULL; 
+        }
+
         $address=limpiar_dato($_POST["address"]);
         $city=limpiar_dato($_POST["city"]);
         $communities=limpiar_dato($_POST["communities"]);
@@ -65,14 +73,13 @@
         }
     }
     }
-    }
-
-        if (validar_name($name)){
+    if (validar_name($name)){
             echo "validada";
         } else{
-            echo "no validada";
+            echo "no validada, tienes que borrarla";
         }
         
         //var_drump($newsletter);
         //echo "<br>";
+}
 ?>
