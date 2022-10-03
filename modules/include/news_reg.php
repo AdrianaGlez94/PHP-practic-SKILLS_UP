@@ -109,13 +109,64 @@ if(isset($_POST["othert"])){
         echo "<strong>Phone:</strong> $phone <br>";
 }
 }
-    if ($name_err = = true){
+    if ($name_err == true){
+        echo "la validación del nombre ha fallado";
+        }else{
+        echo "no validada, tienes que borrarla";
+        };
+    }
+    if($email_err == true) {
+        echo "la validación del nombre ha fallado";
+        }else{
+        echo "no validada, tienes que borrarla";
+        };
+    if($phone_err == true) {
+        echo "la validación del nombre ha fallado";
+            }else{
+        echo "no validada, tienes que borrarla";
+        };    
+    if($phone_err == true) {
+        echo "la validación del nombre ha fallado";
+            }else{
+        echo "no validada, tienes que borrarla";
+        };   
+    if($address_err == true) {
+        echo "la validación del nombre ha fallado";
+            }else{
+        echo "no validada, tienes que borrarla";
+            };
+    if($city_err == true) {
+        echo "la validación del nombre ha fallado";
+        }else{
+        echo "no validada, tienes que borrarla";
+        };   
+    if($communities_err == true) {
+        echo "la validación del nombre ha fallado";
+        }else{
+        echo "no validada, tienes que borrarla";
+        };
+    if($code_err == true) {
+        echo "la validación del nombre ha fallado";
+        }else{
+        echo "no validada, tienes que borrarla";
+        };    
+    if($format_err == true) {
             echo "la validación del nombre ha fallado";
-        } elseif{
+            }else{
             echo "no validada, tienes que borrarla";
-        }
-        
+            };  
+    if($newscheck_err == true) {
+            echo "la validación del nombre ha fallado";
+            }else{
+            echo "no validada, tienes que borrarla";
+            }; 
+    if($text_err == true) {
+            echo "la validación del nombre ha fallado";
+            }else{
+            echo "no validada, tienes que borrarla";
+            };                   
+            
         //var_drump($newsletter);
         //echo "<br>";
-}
+
 ?>
