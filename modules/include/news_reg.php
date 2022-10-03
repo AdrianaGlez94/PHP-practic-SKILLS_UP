@@ -11,7 +11,33 @@
         return $data;
     }
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    function validar_name($name){
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+            return false;
+        }else{
+            return true;
+        }
+    function validar_email($email){
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            return false;
+        } else {
+                return true;
+                }
+        }
+            //** Todo 
+            /** 
+            * validar un numero de telefono
+            *
+            *@pararam boleano
+            */
+    function validar_phone($phone){
+        if(preg_match('/^[0-9]{10}+$/', $phone)) {
+        return false;
+        } else {
+        return true;
+                }  
+    }
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         print_r ($_POST);
 
@@ -24,12 +50,50 @@
         $phone=limpiar_dato($_POST["phone"]);
         
        // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
-        if (isset($_POST["address"])){ 
-            $address= limpiar_dato($_POST["address"]);
-        } else{
-            $address=NULL; 
+       //NO OBLIGATORIOS
+        if(isset($_POST["address"])){
+            $address = limpiarDatos($_POST["address"]);
+        } else {
+            $address = null;
         }
 
+        if(isset($_POST["city"])){
+            $city = limpiarDatos($_POST["city"]);
+    } else {
+            $city = null;
+    }
+
+if(isset($_POST["comunities"])){
+            $communities = limpiarDatos($_POST["comunities"]);
+} else {
+$communities = null;
+}
+
+if(isset($_POST["Zcode"])){
+            $Zcode = limpiarDatos($_POST["Zcode"]);
+} else {
+            $Zcode = null;
+}
+if(isset($_POST["Newsletter[]"])){
+            $Newsletter = limpiarDatos($_POST["Newsletter[]"]);
+} else {
+            $Newsletter = null;
+}
+if(isset($_POST["Newsletter_format"])){
+            $NewsletterFormat = limpiarDatos($_POST["Newsletter_format"]);
+} else {
+            $NewsletterFormat = null;
+}
+if(isset($_POST["address"])){
+            $address = limpiarDatos($_POST["address"]);
+} else {
+            $address = null;
+}
+if(isset($_POST["othert"])){
+            $othert = limpiarDatos($_POST["othert"]);
+} else {
+            $othert = null;
+}
         $address=limpiar_dato($_POST["address"]);
         $city=limpiar_dato($_POST["city"]);
         $communities=limpiar_dato($_POST["communities"]);
@@ -43,39 +107,11 @@
         echo "<strong>Name:</strong> $name <br>";
         echo "<strong>Email:</strong> $email <br>";
         echo "<strong>Phone:</strong> $phone <br>";
-
-
-        function validar_name($name){
-            if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-                return false;}
-                else{
-                    return true;
-                }
-            function validar_email($email){
-                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                    return false;
-                    } else {
-                    return true;
-                    }
-                }
-                //** Todo 
-                /** 
-                * validar un numero de telefono
-                *
-                *@pararam boleano
-                */
-            function validar_phone($phone){
-                    if(preg_match('/^[0-9]{10}+$/', $phone)) {
-                    return false;
-                    } else {
-                    return true;
-                    }  
-        }
-    }
-    }
-    if (validar_name($name)){
-            echo "validada";
-        } else{
+}
+}
+    if ($name_err = = true){
+            echo "la validación del nombre ha fallado";
+        } elseif{
             echo "no validada, tienes que borrarla";
         }
         
