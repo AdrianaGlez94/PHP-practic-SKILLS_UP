@@ -2,8 +2,6 @@
     require '../require/config.php';
 
     $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck=  $text="";
-    ""; 
-
     function limpiar_dato($data){
         $data = trim($data);
         $data = stripslashes($data);
@@ -16,14 +14,14 @@
             return false;
         }else{
             return true;
-        }
+    }
     function validar_email($email){
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
-        } else {
-                return true;
-                }
+        }else {
+            return true;
         }
+    }
             //** Todo 
             /** 
             * validar un numero de telefono
@@ -33,17 +31,15 @@
     function validar_phone($phone){
         if(preg_match('/^[0-9]{10}+$/', $phone)) {
         return false;
-        } else {
-        return true;
-                }  
+        }else {
+            return true;
+    }  
     }
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
         print_r ($_POST);
+        //echo "<br><strong>Método post enviado</strong><br>;
 
-       //echo "<br><strong>Método post enviado</strong><br>;
-
-        if (!empty($_POST["name"]) || !empty($_POST["email"]) || !empty($_POST["phone"])){ 
+    if (!empty($_POST["name"]) || !empty($_POST["email"]) || !empty($_POST["phone"])){ 
         echo "<br><strong>name post hay datos</strong><br>";
         $name= limpiar_dato( $_POST["name"]);
         $email=limpiar_dato($_POST["email"]);
@@ -51,49 +47,48 @@
         
        // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
        //NO OBLIGATORIOS
-        if(isset($_POST["address"])){
+    if(isset($_POST["address"])){
             $address = limpiarDatos($_POST["address"]);
-        } else {
+    }   else {
             $address = null;
         }
-
-        if(isset($_POST["city"])){
+    if(isset($_POST["city"])){
             $city = limpiarDatos($_POST["city"]);
     } else {
             $city = null;
-    }
+        }
 
-if(isset($_POST["comunities"])){
+    if(isset($_POST["comunities"])){
             $communities = limpiarDatos($_POST["comunities"]);
-} else {
-$communities = null;
-}
+    } else {
+    $communities = null;
+        }
 
 if(isset($_POST["Zcode"])){
-            $Zcode = limpiarDatos($_POST["Zcode"]);
+    $Zcode = limpiarDatos($_POST["Zcode"]);
 } else {
-            $Zcode = null;
-}
+    $Zcode = null;
+    }
 if(isset($_POST["Newsletter[]"])){
-            $Newsletter = limpiarDatos($_POST["Newsletter[]"]);
+        $Newsletter = limpiarDatos($_POST["Newsletter[]"]);
 } else {
             $Newsletter = null;
-}
+    }
 if(isset($_POST["Newsletter_format"])){
             $NewsletterFormat = limpiarDatos($_POST["Newsletter_format"]);
 } else {
             $NewsletterFormat = null;
-}
+    }
 if(isset($_POST["address"])){
-            $address = limpiarDatos($_POST["address"]);
+        $address = limpiarDatos($_POST["address"]);
 } else {
-            $address = null;
-}
+        $address = null;
+    }
 if(isset($_POST["othert"])){
-            $othert = limpiarDatos($_POST["othert"]);
+    $othert = limpiarDatos($_POST["othert"]);
 } else {
-            $othert = null;
-}
+        $othert = null;
+    }
         $address=limpiar_dato($_POST["address"]);
         $city=limpiar_dato($_POST["city"]);
         $communities=limpiar_dato($_POST["communities"]);
@@ -107,66 +102,64 @@ if(isset($_POST["othert"])){
         echo "<strong>Name:</strong> $name <br>";
         echo "<strong>Email:</strong> $email <br>";
         echo "<strong>Phone:</strong> $phone <br>";
+
+
+if ($name_err == true){
+        echo "la validación del nombre ha fallado";
+    }else{
+        echo "no validada, tienes que borrarla";
+        };
 }
-}
-    if ($name_err == true){
+if($email_err == true) {
         echo "la validación del nombre ha fallado";
-        }else{
-        echo "no validada, tienes que borrarla";
-        };
-    }
-    if($email_err == true) {
+    }else{
+        echo "false";
+};
+if($phone_err == true) {
         echo "la validación del nombre ha fallado";
-        }else{
-        echo "no validada, tienes que borrarla";
-        };
-    if($phone_err == true) {
+    }else{
+        echo "false";
+};    
+if($phone_err == true) {
         echo "la validación del nombre ha fallado";
-            }else{
-        echo "no validada, tienes que borrarla";
-        };    
-    if($phone_err == true) {
+    }else{
+        echo "false";
+};   
+if($address_err == true) {
         echo "la validación del nombre ha fallado";
-            }else{
-        echo "no validada, tienes que borrarla";
-        };   
-    if($address_err == true) {
+    }else{
+        echo "false";
+};
+if($city_err == true) {
         echo "la validación del nombre ha fallado";
-            }else{
+}else{
         echo "no validada, tienes que borrarla";
-            };
-    if($city_err == true) {
+};   
+if($communities_err == true) {
         echo "la validación del nombre ha fallado";
-        }else{
-        echo "no validada, tienes que borrarla";
-        };   
-    if($communities_err == true) {
+    }else{
+        echo "false";
+};
+if($code_err == true) {
         echo "la validación del nombre ha fallado";
-        }else{
-        echo "no validada, tienes que borrarla";
-        };
-    if($code_err == true) {
-        echo "la validación del nombre ha fallado";
-        }else{
-        echo "no validada, tienes que borrarla";
-        };    
-    if($format_err == true) {
-            echo "la validación del nombre ha fallado";
-            }else{
-            echo "no validada, tienes que borrarla";
-            };  
-    if($newscheck_err == true) {
-            echo "la validación del nombre ha fallado";
-            }else{
-            echo "no validada, tienes que borrarla";
-            }; 
-    if($text_err == true) {
-            echo "la validación del nombre ha fallado";
-            }else{
-            echo "no validada, tienes que borrarla";
-            };                   
-            
+    }else{
+        echo "false";
+};    
+if($format_err == true) {
+    echo "la validación del nombre ha fallado";
+    }else{
+            echo "false";
+};  
+if($newscheck_err == true) {
+    echo "la validación del nombre ha fallado";
+    }else{
+            echo "false";
+}; 
+if($text_err == true) {
+    echo "la validación del nombre ha fallado";
+}else{
+    echo "false";
+    };                   
         //var_drump($newsletter);
         //echo "<br>";
-
 ?>
