@@ -9,11 +9,12 @@
         return $data;
     }
 
-    function validar_name($name){
+    function validar_name($name) { 
         if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
             return false;
         }else{
             return true;
+        }
     }
     function validar_email($email){
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -33,60 +34,61 @@
         return false;
         }else {
             return true;
-    }  
+        }  
     }
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if($_SERVER["REQUEST_METHOD"] == "POST"){ 
         print_r ($_POST);
         //echo "<br><strong>Método post enviado</strong><br>;
 
-    if (!empty($_POST["name"]) || !empty($_POST["email"]) || !empty($_POST["phone"])){ 
-        echo "<br><strong>name post hay datos</strong><br>";
-        $name= limpiar_dato( $_POST["name"]);
-        $email=limpiar_dato($_POST["email"]);
-        $phone=limpiar_dato($_POST["phone"]);
-        
+        if (!empty($_POST["name"]) || !empty($_POST["email"]) || !empty($_POST["phone"])){ 
+            echo "<br><strong>name post hay datos</strong><br>";
+            $name= limpiar_dato( $_POST["name"]);
+            $email=limpiar_dato($_POST["email"]);
+            $phone=limpiar_dato($_POST["phone"]);
+        }
+    }
        // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
        //NO OBLIGATORIOS
-    if(isset($_POST["address"])){
+        if(isset($_POST["address"])){
             $address = limpiarDatos($_POST["address"]);
-    }   else {
+        }else {
             $address = null;
         }
-    if(isset($_POST["city"])){
+        if(isset($_POST["city"])){
             $city = limpiarDatos($_POST["city"]);
-    } else {
+        } else {
             $city = null;
         }
 
-    if(isset($_POST["comunities"])){
+        if(isset($_POST["comunities"])){
             $communities = limpiarDatos($_POST["comunities"]);
-    } else {
-    $communities = null;
+        } else {
+            $communities = null;
         }
 
-if(isset($_POST["Zcode"])){
-    $Zcode = limpiarDatos($_POST["Zcode"]);
-} else {
-    $Zcode = null;
-    }
-if(isset($_POST["Newsletter[]"])){
+        if(isset($_POST["Zcode"])){
+        $Zcode = limpiarDatos($_POST["Zcode"]);
+        } else {
+        $Zcode = null;
+            }
+    if(isset($_POST["Newsletter[]"])){
         $Newsletter = limpiarDatos($_POST["Newsletter[]"]);
-} else {
-            $Newsletter = null;
+    } else {
+        $Newsletter = null;
     }
-if(isset($_POST["Newsletter_format"])){
+    if(isset($_POST["Newsletter_format"])){
             $NewsletterFormat = limpiarDatos($_POST["Newsletter_format"]);
-} else {
-            $NewsletterFormat = null;
+    } else {
+        $NewsletterFormat = null;
     }
-if(isset($_POST["address"])){
+    if(isset($_POST["address"])){
         $address = limpiarDatos($_POST["address"]);
-} else {
+    } else {
         $address = null;
     }
-if(isset($_POST["othert"])){
+    if(isset($_POST["othert"])){
     $othert = limpiarDatos($_POST["othert"]);
-} else {
+    } else {
         $othert = null;
     }
         $address=limpiar_dato($_POST["address"]);
@@ -104,57 +106,57 @@ if(isset($_POST["othert"])){
         echo "<strong>Phone:</strong> $phone <br>";
 
 
-if ($name_err == true){
+    if ($name_err == true){
         echo "la validación del nombre ha fallado";
-    }else{
+    }  else{
         echo "no validada, tienes que borrarla";
         };
-}
-if($email_err == true) {
+
+    if($email_err == true) {
         echo "la validación del nombre ha fallado";
     }else{
         echo "false";
-};
-if($phone_err == true) {
+        };
+    if($phone_err == true) {
         echo "la validación del nombre ha fallado";
     }else{
         echo "false";
-};    
-if($phone_err == true) {
+        };    
+    if($phone_err == true) {
         echo "la validación del nombre ha fallado";
     }else{
         echo "false";
-};   
-if($address_err == true) {
+        };   
+    if($address_err == true) {
         echo "la validación del nombre ha fallado";
     }else{
         echo "false";
-};
+        };
 if($city_err == true) {
         echo "la validación del nombre ha fallado";
 }else{
         echo "no validada, tienes que borrarla";
-};   
-if($communities_err == true) {
+    };   
+if($communities_err == true){
         echo "la validación del nombre ha fallado";
     }else{
         echo "false";
-};
+    };
 if($code_err == true) {
         echo "la validación del nombre ha fallado";
     }else{
         echo "false";
-};    
+    };    
 if($format_err == true) {
     echo "la validación del nombre ha fallado";
     }else{
             echo "false";
-};  
+    };  
 if($newscheck_err == true) {
     echo "la validación del nombre ha fallado";
     }else{
             echo "false";
-}; 
+    }; 
 if($text_err == true) {
     echo "la validación del nombre ha fallado";
 }else{
