@@ -1,7 +1,9 @@
 <?php
     require '../require/config.php';
 
-    $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck=  $text="";
+    $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck=  $text=  $other="";
+    $name_err= $email_err = $phone_err = false;
+
     function limpiar_dato($data){
         $data = trim($data);
         $data = stripslashes($data);
@@ -16,6 +18,7 @@
             return true;
         }
     }
+
     function validar_email($email){
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return false;
@@ -36,6 +39,7 @@
             return true;
         }  
     }
+
     if($_SERVER["REQUEST_METHOD"] == "POST"){ 
         print_r ($_POST);
         //echo "<br><strong>Método post enviado</strong><br>;
@@ -45,123 +49,123 @@
             $name= limpiar_dato( $_POST["name"]);
             $email=limpiar_dato($_POST["email"]);
             $phone=limpiar_dato($_POST["phone"]);
-        }
-    }
-       // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
-       //NO OBLIGATORIOS
-        if(isset($_POST["address"])){
-            $address = limpiarDatos($_POST["address"]);
-        }else {
-            $address = null;
-        }
-        if(isset($_POST["city"])){
-            $city = limpiarDatos($_POST["city"]);
-        } else {
-            $city = null;
-        }
-
-        if(isset($_POST["comunities"])){
-            $communities = limpiarDatos($_POST["comunities"]);
-        } else {
-            $communities = null;
-        }
-
-        if(isset($_POST["Zcode"])){
-        $Zcode = limpiarDatos($_POST["Zcode"]);
-        } else {
-        $Zcode = null;
+        
+    
+            // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
+            //NO OBLIGATORIOS
+            if(isset($_POST["address"])){
+                $address = limpiar_dato($_POST["address"]);
+            }else {
+                $address = null;
             }
-    if(isset($_POST["Newsletter[]"])){
-        $Newsletter = limpiarDatos($_POST["Newsletter[]"]);
-    } else {
-        $Newsletter = null;
-    }
-    if(isset($_POST["Newsletter_format"])){
-            $NewsletterFormat = limpiarDatos($_POST["Newsletter_format"]);
-    } else {
-        $NewsletterFormat = null;
-    }
-    if(isset($_POST["address"])){
-        $address = limpiarDatos($_POST["address"]);
-    } else {
-        $address = null;
-    }
-    if(isset($_POST["othert"])){
-    $othert = limpiarDatos($_POST["othert"]);
-    } else {
-        $othert = null;
-    }
-        $address=limpiar_dato($_POST["address"]);
-        $city=limpiar_dato($_POST["city"]);
-        $communities=limpiar_dato($_POST["communities"]);
-        $Zcode=limpiar_dato($_POST["Zcode"]);
-        $format=limpiar_dato($_POST["format"]);
-        $newscheck=limpiar_dato($_POST["newscheck"]);
-        $text=limpiar_dato($_POST["text"]);
+            if(isset($_POST["city"])){
+                $city = limpiar_dato($_POST["city"]);
+            } else {
+                $city = null;
+            }
 
-        $other= limpiar_dato($_POST ["other"]);
-        echo "<strong>Noticias que quieres recibir: $newsletter <br>";
-        echo "<strong>Name:</strong> $name <br>";
-        echo "<strong>Email:</strong> $email <br>";
-        echo "<strong>Phone:</strong> $phone <br>";
+            if(isset($_POST["comunities"])){
+                $communities = limpiar_dato($_POST["comunities"]);
+            } else {
+                $communities = null;
+            }
+
+            if(isset($_POST["Zcode"])){
+                $Zcode = limpiar_dato($_POST["Zcode"]);
+            } else {
+                $Zcode = null;
+                }
+            if(isset($_POST["Newsletter[]"])){
+                $Newsletter = limpiar_dato($_POST["Newsletter[]"]);
+            } else {
+                $Newsletter = null;
+            }
+            if(isset($_POST["format"])){
+                    $Format =limpiar_dato($_POST["format"]);
+                    //a partir de aquí luego que se envíe el dato sino llega deberá limpiar 
+            } else {
+                $Format = null;
+            }
+            if(isset($_POST["address"])){
+                $address = limpiar_dato($_POST["address"]);
+            } else {
+                $address = null;
+            }
+            if(isset($_POST["othert"])){
+            $othert = limpiar_dato($_POST["othert"]);
+            } else {
+                $othert = null;
+            }
+            
+            $address=limpiar_dato($_POST["address"]);
+            $city=limpiar_dato($_POST["city"]);
+            $communities=limpiar_dato($_POST["communities"]);
+            $Zcode=limpiar_dato($_POST["Zcode"]);
+            $format=limpiar_dato($_POST["format"]);
+            $newscheck=limpiar_dato($_POST["newscheck"]);
+            $text=limpiar_dato($_POST["text"]);
+            $other= limpiar_dato($_POST ["other"]);
+            //echo
+            echo "<strong>Noticias que quieres recibir: $newsletter <br>";
+            echo "<strong>Name:</strong> $name <br>";
+            echo "<strong>Email:</strong> $email <br>";
+            echo "<strong>Address:</strong> $address <br>";
+            echo "<strong>City:</strong> $city <br>";
+            echo "<strong>Communities:</strong> $communities <br>";
+            echo "<strong>Zcode:</strong> $Zcode <br>";
+            echo "<strong>Format:</strong> $format <br>";
+            echo "<strong>Newscheck:</strong> $newscheck <br>";
+            echo "<strong>Text:</strong> $text <br>";
+
+            // Mover
+            if(validar_name($name)){
+
+            } else {
+                $name_err == true; 
+            }
 
 
-    if ($name_err == true){
-        echo "la validación del nombre ha fallado";
-    }  else{
-        echo "no validada, tienes que borrarla";
-        };
+            if(validar_email($email)){
 
-    if($email_err == true) {
-        echo "la validación del nombre ha fallado";
-    }else{
-        echo "false";
-        };
-    if($phone_err == true) {
-        echo "la validación del nombre ha fallado";
-    }else{
-        echo "false";
-        };    
-    if($phone_err == true) {
-        echo "la validación del nombre ha fallado";
-    }else{
-        echo "false";
-        };   
-    if($address_err == true) {
-        echo "la validación del nombre ha fallado";
-    }else{
-        echo "false";
-        };
-if($city_err == true) {
-        echo "la validación del nombre ha fallado";
-}else{
-        echo "no validada, tienes que borrarla";
-    };   
-if($communities_err == true){
-        echo "la validación del nombre ha fallado";
-    }else{
-        echo "false";
-    };
-if($code_err == true) {
-        echo "la validación del nombre ha fallado";
-    }else{
-        echo "false";
-    };    
-if($format_err == true) {
-    echo "la validación del nombre ha fallado";
-    }else{
-            echo "false";
-    };  
-if($newscheck_err == true) {
-    echo "la validación del nombre ha fallado";
-    }else{
-            echo "false";
-    }; 
-if($text_err == true) {
-    echo "la validación del nombre ha fallado";
-}else{
-    echo "false";
-    };                   
+            } else {
+                $email_err == true; 
+            }
+
+            if(validar_phone($phone)){
+
+            } else {
+                $phone_err == true; 
+            }
+            
+        
+        // MOVER
         //var_drump($newsletter);
         //echo "<br>";
+            }else{
+            echo "fallo llegan vacíos";
+            }
+    } else {
+        echo "Fallo post";
+    }
+    
+    /* Si (llega datos) Entonces✔
+    tratamos datos
+    Si datos llegan los datos necesarios entonces✔
+        limpiar la información. ✔
+        //asegurar de que están bien escrito.
+        validar la informacion. ✔
+        Si cumple las validaciones seguimos con el reto de datos.✔
+            Si no llegan variables?**
+                Asignarles NULL. ✔
+            si llegan
+                limpiamos los datos y asignamos a las variables.✔
+                Si hay información Entonces
+                    Mostrar que todos los datos son correctos para enviar a BBDD.
+        Si alguna no cumple la validación o todas.
+            Mensaje de aviso de que validación a fallado.
+    SiNo
+        Mensaje de aviso de que no han llegado los datos necesarios.
+SiNo
+    avisar no han llegado.
+Fin Si */
 ?>
