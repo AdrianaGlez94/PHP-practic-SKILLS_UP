@@ -7,7 +7,6 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
         <title>Index.html</title>
     </head>
     <body>
@@ -42,9 +41,6 @@
             <input type="text" id="City" name="city"><br>
         </div>
 
-
-        
-        
         <div class="contact_input">
             <label for="communities">Autonomous communities</label>
             <select name="communities" id="communities">
@@ -80,23 +76,24 @@
         
         <fieldset class="news radio checkbox">
             <legend>Newsletter</legend>
-            <label>Select the newsletters you would like to recive</label><br>
+            <label>Select the newsletter you would like to recive</label><br>
             <br>
-            <input id="newsletters[]" id="newshtml"  type="checkbox" value="HTML">
-            <label for="newsletters[]">HTML News</label><br>
+            <input id="newshtml[]" type="checkbox" name="newsletter[]" value="HTML">
+            <label for="newshtml[]">HTML News</label><br>
             <br>
-            <input id="newscss" type="checkbox"  id="newscss"value="CSS">
-            <label for="newscss">CSS News</label><br>
+            <input id="newscss[]" type="checkbox"  name="newsletter[]" value="CSS">
+            <label for="newscss[]">CSS News</label><br>
             <br>
-            <input id="newsjs" type="checkbox" id="newsjs" value="JS">
-            <label for="newsjs">Javascript News</label><br>
+            <input id="newsjs[]" type="checkbox" name="newsletter[]" value="JS">
+            <label for="newsjs[]">Javascript News</label><br>
             <br>
+
             <label>Newsletter format</label><br>
             <br>
-            <input id="fhtml" type="radio" name="format" value="fhtml">
+            <input id="fhtml" type="radio" name="format" value="0" checked>
             <label for="fhtml">HTML</label><br>
             <br>                
-            <input id="fplaintxt" type="radio" name="format" value="fplaintxt">
+            <input id="fplaintxt" type="radio" name="format" value="1">
             <label for="fplaintxt">Plain text</label><br>
             <br>
             <label for="othert">Other topics you'd like to hear about</label><br>

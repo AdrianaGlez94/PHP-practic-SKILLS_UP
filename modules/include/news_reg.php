@@ -1,7 +1,7 @@
 <?php
     require '../require/config.php';
 
-    $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck=  $text=  $other="";
+    $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck= $newsletter=  $text=  $other="";
     $name_err= $email_err = $phone_err = false;
 
     function limpiar_dato($data){
@@ -75,10 +75,10 @@
             } else {
                 $Zcode = null;
                 }
-            if(isset($_POST["Newsletter[]"])){
-                $Newsletter = limpiar_dato($_POST["Newsletter[]"]);
+            if(isset($_POST["newsletter[]"])){
+                $newsletter = limpiar_dato($_POST["newsletter[]"]);
             } else {
-                $Newsletter = null;
+                $newsletter = null;
             }
             if(isset($_POST["format"])){
                     $Format =limpiar_dato($_POST["format"]);
@@ -115,6 +115,7 @@
             echo "<strong>Zcode:</strong> $Zcode <br>";
             echo "<strong>Format:</strong> $format <br>";
             echo "<strong>Newscheck:</strong> $newscheck <br>";
+            echo "<strong>Format:</strong> $newsletter <br>";
             echo "<strong>Text:</strong> $text <br>";
 
             // Mover
@@ -136,7 +137,18 @@
             } else {
                 $phone_err == true; 
             }
-            
+        
+    $newsletter = filter_input(
+        INPUT_POST,
+        'newsletter',
+        FILTER_SANITIZE_SPECIAL_CHARS,
+        FILTER_REQUIRE Array
+    );
+
+    var drump(newsletter);
+    echo "<br>Longitud de newsletter: " . count($newsletter) .".";
+    echo "<br>"
+
         
         // MOVER
         //var_drump($newsletter);
