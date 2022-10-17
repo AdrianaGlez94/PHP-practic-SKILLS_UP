@@ -147,7 +147,35 @@
 
     var drump(newsletter);
     echo "<br>Longitud de newsletter: " . count($newsletter) .".";
-    echo "<br>"
+    $lengArray = count($newsletter);
+
+    switch ($lengArray) {
+        case 1:
+            if($newsletter[0] == "HTML"){
+                return $checkNewsletter= 100;
+            } elseif($newsletter[0] == "CSS"){
+                return $checkNewsletter = 010;
+            } else{
+                return  $checkNewsletter= 001;
+            }
+            break
+        case 2: 
+            if($newslletter)
+            foreach($newsletter as $element){
+                if($element !="HTML"){
+                    return $checkNewsletter= 011;
+                }elseif($element !=="CSS"){
+                    return $checkNewsletter=101;
+                }else{
+                    return $checkNewsletter= 110;
+                }
+            }
+        case 3:
+            return $checkNewsletter= 111;
+            break;
+        default:
+            return $newsletter[0]    
+    }
 
         
         // MOVER
