@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}	
+
+body{ 
+	font-family: "r1"; 
+	background-color: #B4D2F7;
+
+}
+
+h2{
+	margin: 2em auto;
+	font-size: 3em;
+	text-align: center;
+    border-radius: 5px;
+    width: 70%;
+}
+
+table{
+    margin: 30px;
+    width: 90%;
+    border: 1px solid;
+    
+}
+
+tr{
+    width: 90%;
+    border: 1px solid;
+    margin: 30px;
+}
+
+.azul{
+    background-color: #C13199;
+}
+
+.verde{
+    background-color: #ED2626;
+}
+
+.yellow{
+    background-color: #EFD473;
+}
+
+div{
+    margin-left: 45%;
+    display: grid;
+    grid-template-columns: 2fr;
+    width: 15%; 
+}
+

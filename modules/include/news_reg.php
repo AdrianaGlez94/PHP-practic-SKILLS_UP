@@ -1,9 +1,9 @@
 <?php
     require '../require/config.php';
 
-    $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck= $newsletter=  $text=  $other="";
+    $name = $email = $phone = $address = $city = $communities = $Zcode= $format = $newscheck=   $text=  $other="";
     $name_err= $email_err = $phone_err = false;
-
+    $newsletter;
     function limpiar_dato($data){
         $data = trim($data);
         $data = stripslashes($data);
@@ -49,6 +49,7 @@
             $name= limpiar_dato( $_POST["name"]);
             $email=limpiar_dato($_POST["email"]);
             $phone=limpiar_dato($_POST["phone"]);
+            
         
     
             // if(isset($_POST['address'])) ? $address = limpiar_dato($_POST['address']){
