@@ -1,7 +1,7 @@
 <?php
-require "..modules/require/config.php";
+require "../modules/require/config.php";
 htmlspecialchars($_SERVER ['PHP_SELF']);
-$_SERVER['REQUESET_METHOD'] == null;
+$_SERVER['REQUEST_METHOD'] == null;
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@ $_SERVER['REQUESET_METHOD'] == null;
 <body>
 
     <main>
-    <?php if ($_SERVER ['REQUESET_METHOD']==='GET') : ?>
+    <?php if ($_SERVER['REQUEST_METHOD']==='GET') : ?>
         <form action= "<?php htmlspecialchrs($_SERVER['PHP_SELF']) ?>" method="POST">
 
             <button type= "submit" name="MostrarInscritos"></button>
@@ -57,7 +57,7 @@ $_SERVER['REQUESET_METHOD'] == null;
                     <td>".$row["address"]."</td>
                     <td>".$row["city"]."</td>
                     <td>".$row["zipcode"]."</td>
-                    <td>".$row["newslwtter"]."</td>
+                    <td>".$row["newsletter"]."</td>
                     <td>".$row["format_news"]."</td>
                     <td>".$row["suggestion"]."</td>
                     </tr>";
